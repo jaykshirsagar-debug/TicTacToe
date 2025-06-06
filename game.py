@@ -1,4 +1,4 @@
-from comp_move import bot_move
+from bot import bot_move
 import board as b
 from player import player_move
 
