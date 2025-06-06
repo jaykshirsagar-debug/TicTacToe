@@ -1,8 +1,9 @@
 import board as b
 
 def player_move():
+        """Get and validate player's move (1-9). Updates board with 'X'."""
+        
         print('\nMove')
-
         invalid = True
         
         while invalid == True:

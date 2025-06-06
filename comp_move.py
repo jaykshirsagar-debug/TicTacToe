@@ -2,6 +2,9 @@ import board as b
 import random as rd
 
 def bot_move():
+    """
+    Performs random bot move in available spots (marked by '*'). Updates game board.
+    """
     valid_move = False
     while valid_move == False:
         random_move = rd.randint(1,9)

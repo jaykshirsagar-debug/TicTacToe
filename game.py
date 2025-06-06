@@ -5,6 +5,13 @@ from player import player_move
 game_over = False
 
 def check_game_over():
+    
+    """
+    Check if game has ended (win/draw).
+    Checks all win conditions and draw state.
+    Sets game_over flag when game ends.
+    
+    """
     global game_over
     if (b.game[0] == b.game[1] == b.game[2] == 'X') or (b.game[0] == b.game[1] == b.game[2] == 'O'):
         print('---- Game Over ----')
@@ -34,9 +41,6 @@ def check_game_over():
     if '*' not in b.game and game_over == False:
         print('---- Game Over - Draw ----')
         game_over = True
-    
-
-
     
 b.show_board()
 
