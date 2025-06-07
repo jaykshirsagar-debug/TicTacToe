@@ -18,27 +18,35 @@ def check_game_over():
 
         if (b.game[0] == b.game[1] == b.game[2] == 'X') or (b.game[0] == b.game[1] == b.game[2] == 'O'):
             print('---- Game Over ----')
+            print(f'{b.game[0]} Wins')
             game_over = True
         elif (b.game[2] == b.game[5] == b.game[8] == 'X') or (b.game[2] == b.game[5] == b.game[8] == 'O'):
             print('---- Game Over ----')
+            print(f'{b.game[2]} Wins')
             game_over = True
         elif (b.game[6] == b.game[7] == b.game[8] == 'X') or (b.game[6] == b.game[7] == b.game[8] == 'O'):
             print('---- Game Over ----')
+            print(f'{b.game[6]} Wins')
             game_over = True
         elif (b.game[0] == b.game[3] == b.game[6] == 'X') or (b.game[0] == b.game[3] == b.game[6] == 'O'):
             print('---- Game Over ----')
+            print(f'{b.game[0]} Wins')
             game_over = True
         elif (b.game[0] == b.game[4] == b.game[8] == 'X') or (b.game[0] == b.game[4] == b.game[8] == 'O'):
             print('---- Game Over ----')
+            print(f'{b.game[0]} Wins')
             game_over = True
         elif (b.game[2] == b.game[4] == b.game[6] == 'X') or (b.game[2] == b.game[4] == b.game[6] == 'O'):
             print('---- Game Over ----')
+            print(f'{b.game[2]} Wins')
             game_over = True
         elif (b.game[3] == b.game[4] == b.game[5] == 'X') or (b.game[3] == b.game[4] == b.game[5] == 'O'):
             print('---- Game Over ----')
+            print(f'{b.game[3]} Wins')
             game_over = True
         elif (b.game[1] == b.game[4] == b.game[7] == 'X') or (b.game[1] == b.game[4] == b.game[7] == 'O'):
             print('---- Game Over ----')
+            print(f'{b.game[1]} Wins')
             game_over = True
 
         if '*' not in b.game and game_over == False:
