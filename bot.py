@@ -1,3 +1,10 @@
+"""
+Filename:         bot.py
+Author:           Jay Kshirsagar
+Date Created:     06/06/2025
+Description:      This page handles the bots move in the Tic-tac-toe game.
+"""
+
 import board as b
 import random as rd
 

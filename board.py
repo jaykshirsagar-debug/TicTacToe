@@ -1,3 +1,10 @@
+"""
+Filename:         board.py
+Author:           Jay Kshirsagar
+Date Created:     06/06/2025
+Description:      This page displays the state of board after either the player or bot moves, and after the game ends.
+"""
+
 game = ['*','*','*',
         '*','*','*',
         '*','*','*',]

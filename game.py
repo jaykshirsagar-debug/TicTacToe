@@ -1,3 +1,12 @@
+"""
+Filename:         game.py
+Author:           Jay Kshirsagar
+Date Created:     06/06/2025
+Description:      This Python program implements a Tic-tac-toe game where a player competes against a bot.
+                 The game tracks moves, validates win conditions, and handles game completion.
+"""
+
+
 from bot import bot_move
 import board as b
 from player import player_move
@@ -71,5 +80,4 @@ while game_over == False:
     if check_game_over() == False:
         bot_move()
         
-
 b.show_board()
