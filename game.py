@@ -2,82 +2,50 @@
 Filename:         game.py
 Author:           Jay Kshirsagar
 Date Created:     06/06/2025
-Description:      This Python program implements a Tic-tac-toe game where a player competes against a bot.
+Description:      This Python program implements a Tic-tac-toe game where a player competes against a bot of their choice.
                  The game tracks moves, validates win conditions, and handles game completion.
 """
 
 
-from bot import bot_move
+from bot import Bots
 import board as b
 from player import player_move
 
-game_over = False
-num_moves = 0
+bot = Bots()
+choice = False
+difficulty = 0
 
-def check_game_over():
-    """Checks if game is over by win condition or draw.
-    Returns:
-        bool: True if game is over, False if game continues
-    """
-    global game_over
-    global num_moves
-    #The game requires a minimum of 5 moves to be over
-    #Only starts to check win after 5 or more moves
-    if num_moves >= 5:
+while choice == False:
+    print('Difficulty:')
+    print(' 1. Brain Dead')
+    print(' 2. Noob')
+    input = int(input())
 
-        if (b.game[0] == b.game[1] == b.game[2] == 'X') or (b.game[0] == b.game[1] == b.game[2] == 'O'):
-            print('---- Game Over ----')
-            print(f'{b.game[0]} Wins')
-            game_over = True
-        elif (b.game[2] == b.game[5] == b.game[8] == 'X') or (b.game[2] == b.game[5] == b.game[8] == 'O'):
-            print('---- Game Over ----')
-            print(f'{b.game[2]} Wins')
-            game_over = True
-        elif (b.game[6] == b.game[7] == b.game[8] == 'X') or (b.game[6] == b.game[7] == b.game[8] == 'O'):
-            print('---- Game Over ----')
-            print(f'{b.game[6]} Wins')
-            game_over = True
-        elif (b.game[0] == b.game[3] == b.game[6] == 'X') or (b.game[0] == b.game[3] == b.game[6] == 'O'):
-            print('---- Game Over ----')
-            print(f'{b.game[0]} Wins')
-            game_over = True
-        elif (b.game[0] == b.game[4] == b.game[8] == 'X') or (b.game[0] == b.game[4] == b.game[8] == 'O'):
-            print('---- Game Over ----')
-            print(f'{b.game[0]} Wins')
-            game_over = True
-        elif (b.game[2] == b.game[4] == b.game[6] == 'X') or (b.game[2] == b.game[4] == b.game[6] == 'O'):
-            print('---- Game Over ----')
-            print(f'{b.game[2]} Wins')
-            game_over = True
-        elif (b.game[3] == b.game[4] == b.game[5] == 'X') or (b.game[3] == b.game[4] == b.game[5] == 'O'):
-            print('---- Game Over ----')
-            print(f'{b.game[3]} Wins')
-            game_over = True
-        elif (b.game[1] == b.game[4] == b.game[7] == 'X') or (b.game[1] == b.game[4] == b.game[7] == 'O'):
-            print('---- Game Over ----')
-            print(f'{b.game[1]} Wins')
-            game_over = True
+    if input == 1:
+        difficulty = 1
+        print('Brain Dead difficulty selected')
+        choice = True
+    elif input == 2:
+        difficulty = 2
+        print('Noob difficulty selected')
+        choice = True
 
-        if '*' not in b.game and game_over == False:
-            print('---- Game Over - Draw ----')
-            game_over = True
-    else:
-        num_moves += 1
-    
-    return game_over
-    
 b.show_board()
 
-while game_over == False:
+while b.game_over == False:
     """
     Game loop until either Player or Bot wins.
     if the game is over, while loop will be exited.
     """
 
-    if check_game_over() == False:
+    if b.check_game_over(b.game) == False:
         player_move()
         
-    if check_game_over() == False:
-        bot_move()
+    if b.check_game_over(b.game) == False:
+
+        if difficulty == 1:
+            bot.brain_dead()
+        else:
+            bot.noob()
         
 b.show_board()
