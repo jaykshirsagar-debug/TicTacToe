@@ -55,6 +55,12 @@ class Bots:
             if b.check_game_over(board_copy):
                 b.game[move] = 'O'
                 return
+            
+            board_copy[move] = 'X'
+
+            if b.check_game_over(board_copy):
+                b.game[move] = 'O'
+                return
         
         random_move = rd.choice(l_moves)
         b.game[random_move] = 'O'
