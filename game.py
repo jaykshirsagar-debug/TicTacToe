@@ -47,5 +47,12 @@ while b.game_over == False:
             bot.brain_dead()
         else:
             bot.noob()
-        
+
+if b.result == 'X' or b.result == 'O':
+    print('---- Game Over ----')
+    print(f'{b.result} Wins')
+else: 
+    print('---- Game Over - Draw ----')
+
+    
 b.show_board()
